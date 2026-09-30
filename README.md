@@ -8,16 +8,19 @@ Turin Polytechnic University in Tashkent — Course of Computer Science
 
    | Exercise | File |
    |----------|------|
-   | 4 | `exercise4.py` |
-   | 5 | `exercise5.py` |
-   | 6 | `exercise6.py` |
-   | 7 | `exercise7.py` |
+   | 4 | `ex4.py` |
+   | 5 | `ex5.py` |
+   | 6 | `ex6.py` |
+   | 7 | `ex7.py` |
 
 2. Run each program and check it against the example in the exercise:
 
    ```bash
-   python exercise5.py
+   python ex5.py
    ```
+
+   In GitHub Codespaces, choose **Terminal > Run Task** and select the matching
+   `Run exN.py` task to run an exercise in the integrated terminal.
 
 3. Commit and push your work before the deadline:
 
