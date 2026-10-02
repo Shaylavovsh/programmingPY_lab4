@@ -1,97 +1,155 @@
-# Laboratory Practice n. 3 — Python (Exercises 4–7)
+# Laboratory Practice n. 4 - Python (Exercises 1-4)
 
-Turin Polytechnic University in Tashkent — Course of Computer Science
+Turin Polytechnic University in Tashkent - Course of Computer Science
 
-## How to submit
+## Getting started in GitHub Codespaces
 
-1. Write your solution for each exercise in its own file:
+Each exercise has its own Python file. Open the file you are working on and use the **Run Python File** button in the top-right corner of the editor. The program runs in the terminal below the editor.
 
-   | Exercise | File |
-   |----------|------|
-   | 4 | `ex4.py` |
-   | 5 | `ex5.py` |
-   | 6 | `ex6.py` |
-   | 7 | `ex7.py` |
+You can also run a file from the terminal:
 
-2. Run each program and check it against the example in the exercise:
+```bash
+python ex1.py
+```
 
-   ```bash
-   python ex5.py
-   ```
+Replace `ex1.py` with the file you want to test. Do not rename the provided files.
 
-   In GitHub Codespaces, choose **Terminal > Run Task** and select the matching
-   `Run exN.py` task to run an exercise in the integrated terminal.
+Before the deadline, commit and push your work:
 
-3. Commit and push your work before the deadline:
+```bash
+git add .
+git commit -m "Solve lab 4"
+git push
+```
 
-   ```bash
-   git add .
-   git commit -m "Solve lab 3"
-   git push
-   ```
-
-Only work that has been pushed to GitHub is graded. Do not rename the files.
-
-Read input from the keyboard with `input()` and show results with `print()`.
+Only work pushed to GitHub is graded. Read input with `input()` and display output with `print()`.
 
 ---
 
-## Exercise 4
+## Exercise 1 - Number series
 
-Write a Python program that prints a table of the decimal ASCII codes for every letter of the English alphabet, both small and capital.
+Write a program that displays the following two series of numbers, one after the other. Replace the dots with the appropriate numbers.
 
-The table must have **26 rows and 4 columns**. Each row shows a small letter, its ASCII code, the matching capital letter, and its ASCII code.
-
-Use an iterative statement (a loop) to solve this problem.
-
-**Example** (first and last lines of the output):
+First series:
 
 ```
-'a' 97   'A' 65
-'b' 98   'B' 66
-'c' 99   'C' 67
-'d' 100  'D' 68
+(0,0) (0,1) (0,2) (0,3) ... (0,9)
+(1,0) (1,1) (1,2) (1,3) ... (1,9)
+(2,0) (2,1) (2,2) (2,3) ... (2,9)
 ...
-'z' 122  'Z' 90
+(9,0) (9,1) (9,2) (9,3) ... (9,9)
 ```
 
-## Exercise 5
+Second series:
 
-Write a Python program that:
+```
+0  1  2  3  ... 9
+10 11 12 13 ... 19
+20 21 22 23 ... 29
+...
+90 91 92 93 ... 99
+```
 
-- reads two positive integer numbers `x` and `y`;
-- computes the greatest common divisor (gcd) of `x` and `y`;
-- prints that value.
+Write the solution in `ex1.py`.
 
-The gcd of `x` and `y` is the largest integer `v` that divides both `x` and `y` with a remainder of 0.
+## Exercise 2 - Figures
 
-Use **Euclid's method**:
+Read a positive integer `n`. Write the programs to produce each figure below, using `n` as the side length.
 
-1. Given `x` and `y`, let `M` be the larger and `m` the smaller of the two.
-2. Let `r` be the remainder of dividing `M` by `m`: `r = M % m`.
-3. If `r` is 0, then `m` is the gcd.
-4. If `r` is not 0, replace `M` with `m` and `m` with `r`, then go back to step 2.
+Write all Exercise 2 solutions in `ex2.py`.
 
-**Example:** with `x = 15` and `y = 40`, the divisions are `40 % 15 = 10`, `15 % 10 = 5`, `10 % 5 = 0`. So the gcd of 15 and 40 is **5**.
+For `n = 4`, the figures are:
 
-## Exercise 6
+```text
+****     ****     ****     *+++     *  *
+***       ***     *  *     -*++      **
+**         **     *  *     --*+      **
+*           *     ****     ---*     *  *
+```
 
-Write a Python program that:
+For `n = 5`, the figures are:
 
-- reads a positive integer number `n`;
-- reads `n` integer values, then:
-  - prints `ascending sequence` if every number after the first is larger than the one before it;
-  - prints `descending sequence` if every number after the first is smaller than the one before it;
-  - prints `neither ascending nor descending sequence` if neither condition holds.
+```text
+*****     *****     *****     *++++     *   *
+****       ****     *   *     -*+++      * *
+***         ***     *   *     --*++       *
+**           **     *   *     ---*+      * *
+*             *     *****     ----*     *   *
+```
 
-**Example:** with `n = 10` and the numbers `-2 5 7 13 18 24 40 56 90 137`, the program prints `ascending sequence`.
+## Exercise 3 - Repeated asterisks
 
-## Exercise 7
+Write a program that repeatedly reads an integer `n`.
 
-Write a Python program that:
+- If `n > 0`, display `n` asterisks on one row, then ask for another value.
+- If `n <= 0`, stop the program.
 
-- reads an integer number `n`, at least 2;
-- reads `n` real values from the keyboard;
-- finds the two largest values and prints them (in any order).
+Example:
 
-**Example:** with `n = 9` and the values `1.5 3.8 14.3 0.0 -2.1 78.1 -5.9 4.4 9.2`, the program prints **78.1** and **14.3**.
+```text
+Input n: 5
+*****
+Input n: 13
+*************
+Input n: 2
+**
+Input n: -3
+Execution terminated.
+```
+
+Write the solution in `ex3.py`.
+
+## Exercise 4 - Floyd's triangle
+
+Floyd's triangle is formed by consecutive integers arranged in rows:
+
+```text
+1
+2  3
+4  5  6
+7  8  9  10
+11 12 13 14 15
+...
+```
+
+### Part 1 - First n rows
+
+Read a strictly positive integer `n` and display the first `n` rows of Floyd's triangle. Write the solution in `ex4.py`.
+
+For `n = 3`:
+
+```text
+1
+2  3
+4  5  6
+```
+
+For `n = 4`:
+
+```text
+1
+2  3
+4  5  6
+7  8  9  10
+```
+
+### Part 2 - First n numbers
+
+Write another program that reads a strictly positive integer `n` and prints only the first `n` numbers of Floyd's triangle. Write this second solution in `ex4.py`, below the first one.
+
+For `n = 5`:
+
+```text
+1
+2  3
+4  5
+```
+
+For `n = 7`:
+
+```text
+1
+2  3
+4  5  6
+7
+```
